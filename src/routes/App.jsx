@@ -6,10 +6,12 @@ import { Checkout } from '../containers/Checkout';
 import { Information } from '../containers/Information';
 import { Payment } from '../containers/Payment';
 import { Success } from '../containers/Success';
+import { Layout } from '../components/Layout';
 
 export const App = () => {
   return (
     <BrowserRouter>
+    <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/checkout" element={<Checkout />} />
@@ -17,6 +19,7 @@ export const App = () => {
         <Route path="/checkout/payment" element={<Payment />} />
         <Route path="/checkout/success" element={<Success />} />
       </Routes>
+      </Layout>
     </BrowserRouter>
   );
 };
