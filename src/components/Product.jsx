@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+//import context
+import { AppContext } from '../context/AppContext';
 
 const Product = ({ product }) => {
-  console.log(product);
+  const { addToCard } = useContext(AppContext);
+
+  const AddProduct = () => {
+    addToCard(product);
+  };
   return (
     <div className="Products-item">
       <img src={product.image} alt={product.title} loading="Lazy" />
@@ -12,7 +18,9 @@ const Product = ({ product }) => {
         </h2>
         <p>{product.description}</p>
       </div>
-      <button type="button">Comprar</button>
+      <button type="button" onClick={AddProduct}>
+        Comprar
+      </button>
     </div>
   );
 };

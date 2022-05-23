@@ -21,5 +21,6 @@ export const useInitialState = () => {
   return {
     addToCard,
     RemoveFromCart,
+    state,
   };
 };
